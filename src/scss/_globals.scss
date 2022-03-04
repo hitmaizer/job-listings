@@ -15,4 +15,9 @@
 
 .page__wrapper {
   background-color: $offWhite;
+  min-height: 100vh;
+}
+
+.results {
+  gap: 32px;
 }
