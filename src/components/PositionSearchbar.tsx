@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 
-function PositionSearchbar() {
+const PositionSearchbar: FC = () => {
   return <div>PositionSearchbar</div>;
-}
+};
 
 export default PositionSearchbar;

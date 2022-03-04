@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 
-function LocationSearchbar() {
+const LocationSearchbar: FC = () => {
   return <div>LocationSearchbar</div>;
-}
+};
 
 export default LocationSearchbar;
