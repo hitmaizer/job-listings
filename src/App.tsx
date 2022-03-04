@@ -7,11 +7,11 @@ import Results from "./components/Results";
 
 const App: FC = () => {
   return (
-    <div className="page__wrapper">
+    <div className="page__wrapper flex-col">
       <ThemeProvider theme={Theme}>
         <header className="page__header">
           <h6 className="header__logo">
-            <span className="strong__text">Github</span>
+            <span className="strong__text">Github </span>
             Jobs
           </h6>
           <PositionSearchbar />
