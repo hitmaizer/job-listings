@@ -24,3 +24,11 @@
       -ms-flex-direction: row;
           flex-direction: row;
 }
+
+.page__wrapper {
+  background-color: #f6f7fb;
+}
+
+.card__wrapper {
+  font-family: "Roboto", sans-serif;
+}
