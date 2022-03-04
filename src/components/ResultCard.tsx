@@ -14,11 +14,11 @@ const ResultCard: FC = () => {
       <div className="card__details flex-row">
         <div className="detail__item flex-row">
           <Globe size="24px" />
-          <p className="item__text"></p>
+          <p className="item__text">New York</p>
         </div>
         <div className="detail__item flex-row">
           <Clock size="24px" />
-          <p className="item__text"></p>
+          <p className="item__text">5 days ago</p>
         </div>
       </div>
     </StyledCard>
