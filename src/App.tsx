@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import Theme from "./theme/Theme";
 import { ThemeProvider } from "styled-components";
 
-function App() {
+const App: FC = () => {
   return (
     <div className="page__wrapper">
       <ThemeProvider theme={Theme}>
@@ -10,6 +10,6 @@ function App() {
       </ThemeProvider>
     </div>
   );
-}
+};
 
 export default App;
