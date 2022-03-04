@@ -6,7 +6,7 @@ type Props = {};
 
 function Results({}: Props) {
   return (
-    <div className="section__wrapper">
+    <div className="section__wrapper flex-col">
       <ResultCard />
       <ResultCard />
       <ResultCard />
