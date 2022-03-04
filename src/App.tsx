@@ -20,7 +20,17 @@ const App: FC = () => {
             <Results />
           </div>
         </header>
-        <h1>hello mate!</h1>
+        <footer className="footer__sign">
+          <p className="sign">
+            created by
+            <b>
+              <u>
+                <a href="http://github.com/hitmaizer">Jose Alves</a>
+              </u>
+            </b>
+            - devChallenges.io
+          </p>
+        </footer>
       </ThemeProvider>
     </div>
   );
