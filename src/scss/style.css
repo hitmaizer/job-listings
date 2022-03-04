@@ -27,8 +27,76 @@
 
 .page__wrapper {
   background-color: #f6f7fb;
+  min-height: 100vh;
+}
+
+.results {
+  gap: 32px;
 }
 
 .card__wrapper {
   font-family: "Roboto", sans-serif;
+  gap: 16px;
+}
+
+.card__info {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card__img {
+  max-width: 100%;
+  width: 90px;
+  border-radius: 4px;
+}
+
+.info__company {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #334680;
+}
+
+.info__title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #334680;
+  margin-top: 8px;
+}
+
+.info__badge {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #334680;
+  padding: 6px 8px;
+  border: solid 1px #334680;
+  border-radius: 4px;
+  width: 65px;
+  margin-top: 12px;
+}
+
+.card__details {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: #b9bdcf;
+  gap: 16px;
+}
+
+.detail__item {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+.item__text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
 }
