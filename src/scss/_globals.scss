@@ -16,6 +16,19 @@
 .page__wrapper {
   background-color: $offWhite;
   min-height: 100vh;
+  align-items: center;
+}
+
+.header__logo {
+  font-family: $poppins;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  color: $darkPurple;
+  padding-top: 32px;
+  .strong__text {
+    font-weight: 700;
+  }
 }
 
 .results {
