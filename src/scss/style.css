@@ -28,6 +28,22 @@
 .page__wrapper {
   background-color: #f6f7fb;
   min-height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  color: #282538;
+  padding-top: 32px;
+}
+
+.header__logo .strong__text {
+  font-weight: 700;
 }
 
 .results {
@@ -99,4 +115,31 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
+}
+
+.position {
+  background-image: url("https://i.ibb.co/VQNN1Dz/background-Img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1200px;
+  min-height: 138px;
+  border-radius: 8px;
+  margin-top: 32px;
+}
+
+.footer__sign {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #b9bdcf;
+  margin-top: 32px;
+}
+
+.footer__sign a {
+  text-decoration: none;
+  color: #b9bdcf;
 }
