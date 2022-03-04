@@ -1,0 +1,59 @@
+.card__wrapper {
+  font-family: $roboto;
+  gap: 16px;
+}
+
+.card__info {
+  justify-content: center;
+}
+
+.card__img {
+  max-width: 100%;
+  width: 90px;
+  border-radius: 4px;
+}
+
+.info__company {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: $blueGray;
+}
+
+.info__title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: $blueGray;
+  margin-top: 8px;
+}
+
+.info__badge {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: $blueGray;
+  padding: 6px 8px;
+  border: solid 1px $blueGray;
+  border-radius: 4px;
+  width: 65px;
+  margin-top: 12px;
+}
+
+.card__details {
+  align-self: flex-end;
+  color: $footerGray;
+  gap: 16px;
+}
+
+.detail__item {
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.item__text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
