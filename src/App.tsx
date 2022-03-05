@@ -10,7 +10,6 @@ import { DataObj } from "./interfaces/DataInterface";
 
 const App: FC = () => {
   const [searching, setSearching] = React.useState(true);
-  const [displayData, setDisplayData] = React.useState<DataObj[]>([]);
   const [allData, setAllData] = React.useState<DataObj["posts"]>(Data);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [postsPerPage, setPostsPerPage] = React.useState(5);
