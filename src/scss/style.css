@@ -58,6 +58,11 @@
   gap: 32px;
 }
 
+.pagination__wrapper {
+  place-content: flex-end;
+  gap: 12px;
+}
+
 .card__wrapper {
   font-family: "Roboto", sans-serif;
   gap: 16px;
