@@ -32,6 +32,7 @@
   min-width: 379px;
   position: relative;
   margin-top: 16px;
+  margin-bottom: 24px;
 }
 
 .location__search {
@@ -58,4 +59,25 @@
   transform: translateY(calc(-50%));
   z-index: 2;
   left: 5%;
+}
+
+.radio__item {
+  align-items: center;
+  gap: 12px;
+}
+
+input[type="radio"] {
+  border: solid 1px $lightGray;
+  background-color: transparent;
+  &:active {
+    color: $primaryBlue;
+  }
+}
+
+.radio__label {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $blueGray;
 }
