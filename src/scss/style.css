@@ -33,6 +33,14 @@
           align-items: center;
 }
 
+.page__header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 30%;
+}
+
 .header__logo {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
@@ -66,6 +74,14 @@
 .card__wrapper {
   font-family: "Roboto", sans-serif;
   gap: 16px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.card__wrapper:hover {
+  -webkit-transform: translateY(-3%);
+          transform: translateY(-3%);
 }
 
 .card__info {
