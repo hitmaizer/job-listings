@@ -2,7 +2,23 @@ import React, { FC } from "react";
 import { Clock, Globe } from "styled-icons/entypo";
 import StyledCard from "../elements/StyledCard";
 
-const ResultCard: FC = () => {
+interface Props {
+  id?: number;
+  url: string;
+  title: string;
+  company_name: string;
+  company_logo: string;
+  category: string;
+  tags: string[];
+  job_type: string;
+  publication_date: string;
+  candidate_required_location: string;
+  salary?: string;
+  description: string;
+  company_logo_url?: string;
+}
+
+const ResultCard: FC<Props> = (props: Props) => {
   return (
     <StyledCard className="card__wrapper flex-row">
       <img src="images/placeholder.png" alt="" className="card__img" />
