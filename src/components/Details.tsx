@@ -8,9 +8,9 @@ function Details({}: Props) {
     <div className="details__wrapper flex-col">
       <div className="details__header flex-row">
         <h1 className="details__title">Front End Software Engineer</h1>
-        <h5 className="info__badge">Full time</h5>
+        <h5 className="info__badge article__badge">Full time</h5>
       </div>
-      <div className="detail__item flex-row">
+      <div className="details__item flex-row">
         <Clock size="16px" />
         <p className="item__text">5 days ago</p>
       </div>
@@ -18,7 +18,7 @@ function Details({}: Props) {
         <img src="images/placeholder.png" alt="" className="info__img" />
         <div className="info__details flex-col">
           <h3 className="details__company">Kasisto</h3>
-          <div className="detail__item flex-row">
+          <div className="details__item flex-row">
             <Globe size="16px" />
             <p className="item__text">New York</p>
           </div>
