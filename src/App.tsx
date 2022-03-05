@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import PositionSearchbar from "./components/PositionSearchbar";
 import LocationSearchbar from "./components/LocationSearchbar";
 import Results from "./components/Results";
+import Article from "./components/Article";
 
 const App: FC = () => {
   return (
@@ -31,6 +32,7 @@ const App: FC = () => {
             - devChallenges.io
           </p>
         </footer>
+        <Article />
       </ThemeProvider>
     </div>
   );
