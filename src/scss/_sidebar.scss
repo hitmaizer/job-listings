@@ -1,3 +1,5 @@
+//Index Sidebar
+
 .sidebar__checkbox {
   align-items: center;
   gap: 12px;
@@ -80,4 +82,31 @@ input[type="radio"] {
   font-size: 14px;
   line-height: 21px;
   color: $blueGray;
+}
+
+//Article Sidebar
+
+.sidebar__back {
+  color: $primaryBlue;
+  gap: 16px;
+  align-items: center;
+  .back__text {
+    font-family: $poppins;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.sidebar__text {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $blueGray;
+  max-width: 231px;
+  .sidebar__emails {
+    color: $primaryBlue;
+    text-decoration: none;
+  }
 }
