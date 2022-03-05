@@ -252,6 +252,7 @@
   min-width: 379px;
   position: relative;
   margin-top: 16px;
+  margin-bottom: 24px;
 }
 
 .location__search {
@@ -305,6 +306,30 @@
           transform: translateY(calc(-50%));
   z-index: 2;
   left: 5%;
+}
+
+.radio__item {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+}
+
+input[type="radio"] {
+  border: solid 1px #b9bdcf;
+  background-color: transparent;
+}
+
+input[type="radio"]:active {
+  color: #1e86ff;
+}
+
+.radio__label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #334680;
 }
 
 .footer__sign {
