@@ -46,6 +46,10 @@
   font-weight: 700;
 }
 
+.bottom__container {
+  margin-top: 40px;
+}
+
 .results {
   gap: 32px;
 }
