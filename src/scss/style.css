@@ -341,6 +341,35 @@ input[type="radio"]:active {
   color: #334680;
 }
 
+.sidebar__back {
+  color: #1e86ff;
+  gap: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar__back .back__text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.sidebar__text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #334680;
+  max-width: 231px;
+}
+
+.sidebar__text .sidebar__emails {
+  color: #1e86ff;
+  text-decoration: none;
+}
+
 .footer__sign {
   width: 100%;
   font-family: "Montserrat", sans-serif;
