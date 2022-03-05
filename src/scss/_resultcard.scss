@@ -1,6 +1,11 @@
 .card__wrapper {
   font-family: $roboto;
   gap: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  &:hover {
+    transform: translateY(-3%);
+  }
 }
 
 .card__info {
