@@ -40,3 +40,8 @@
 .results {
   gap: 32px;
 }
+
+.pagination__wrapper {
+  place-content: flex-end;
+  gap: 12px;
+}
