@@ -21,20 +21,22 @@ interface Props {
 const ResultCard: FC<Props> = (props: Props) => {
   return (
     <StyledCard className="card__wrapper flex-row">
-      <img src="images/placeholder.png" alt="" className="card__img" />
+      <img src={props.company_logo} alt="" className="card__img" />
       <div className="card__info flex-col">
-        <h6 className="info__company">Kasisto</h6>
-        <h1 className="info__title">Front-End Software Engineer</h1>
-        <h5 className="info__badge">Full time</h5>
+        <h6 className="info__company">{props.company_name}</h6>
+        <h1 className="info__title">{props.title}</h1>
+        {props.job_type === "full_time" && (
+          <h5 className="info__badge">Full time</h5>
+        )}
       </div>
       <div className="card__details flex-row">
         <div className="detail__item flex-row">
           <Globe size="16px" />
-          <p className="item__text">New York</p>
+          <p className="item__text">{props.candidate_required_location}</p>
         </div>
         <div className="detail__item flex-row">
           <Clock size="16px" />
-          <p className="item__text">5 days ago</p>
+          <p className="item__text">{props.publication_date}</p>
         </div>
       </div>
     </StyledCard>
