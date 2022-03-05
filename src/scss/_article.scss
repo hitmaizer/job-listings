@@ -1,0 +1,62 @@
+.article__wrapper {
+  gap: 64px;
+}
+
+.details__header {
+  align-items: center;
+  gap: 24px;
+}
+
+.details__title {
+  font-family: $roboto;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: $blueGray;
+}
+
+.article__badge {
+  margin-top: 0;
+}
+
+.details__item {
+  justify-content: flex-start;
+  align-items: center;
+  color: $lightGray;
+  gap: 8px;
+  font-family: $roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 8px;
+}
+
+.details__info {
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.info__img {
+  max-width: 100%;
+  object-fit: cover;
+  width: 42px;
+  border-radius: 4px;
+}
+
+.details__company {
+  font-family: $roboto;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: $blueGray;
+}
+
+.details__text {
+  font-family: $roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $blueGray;
+  max-width: 889px;
+  margin-top: 32px;
+}
