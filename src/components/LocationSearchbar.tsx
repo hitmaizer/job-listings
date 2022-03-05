@@ -11,7 +11,11 @@ const LocationSearchbar: FC = () => {
       <h6 className="sidebar__title">Location</h6>
       <div className="input__container--location">
         <Globe size="16px" className="search__icon" />
-        <input type="text" className="location__search" />
+        <input
+          type="text"
+          className="location__search"
+          placeholder="City, state, zip code or country"
+        />
       </div>
       <div className="radio__item flex-row">
         <input type="radio" className="location__radio" value="London" />
