@@ -1,5 +1,4 @@
 import React from "react";
-import { DataObj } from "../interfaces/DataInterface";
 import Pagination from "./Pagination";
 import ResultCard from "./ResultCard";
 
