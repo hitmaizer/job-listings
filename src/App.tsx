@@ -14,6 +14,9 @@ const App: FC = () => {
   const [allData, setAllData] = React.useState<DataObj["posts"]>(Data);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [postsPerPage, setPostsPerPage] = React.useState(5);
+  const [pageNumberLimit, setPageNumberLimit] = React.useState(5);
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = React.useState(3);
+  const [minPageNumberLimit, setMinPageNumberLimit] = React.useState(0);
 
   const randomNumber = Math.floor(Math.random() * allData.length);
 
@@ -45,6 +48,9 @@ const App: FC = () => {
               totalPosts={allData.length}
               paginate={paginate}
               currentPage={currentPage}
+              pageNumberLimit={pageNumberLimit}
+              maxPageNumberLimit={maxPageNumberLimit}
+              minPageNumberLimit={minPageNumberLimit}
             />
           </>
         )}
