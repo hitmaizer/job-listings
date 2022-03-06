@@ -6,6 +6,9 @@ type Props = {
   postsPerPage: number;
   totalPosts: number;
   currentPage: number;
+  maxPageNumberLimit: number;
+  minPageNumberLimit: number;
+  pageNumberLimit: number;
   paginate: (a: number) => void;
 };
 
@@ -16,22 +19,31 @@ const Pagination: React.FC<Props> = (props: Props) => {
     pageNumbers.push(i);
   }
 
-  const paginationElements = pageNumbers.map((item) => (
-    <div key={item} className="item__wrapper">
-      <a
-        key={item}
-        onClick={() => props.paginate(item)}
-        href="!#"
-        className="item__link"
-      >
-        <StyledPagination
-          key={item}
-          children={item}
-          className={props.currentPage === item ? "active" : ""}
-        />
-      </a>
-    </div>
-  ));
+  const paginationElements = pageNumbers.map((item) => {
+    if (
+      item < props.maxPageNumberLimit + 1 &&
+      item > props.minPageNumberLimit
+    ) {
+      return (
+        <div key={item} className="item__wrapper">
+          <a
+            key={item}
+            onClick={() => props.paginate(item)}
+            href="!#"
+            className="item__link"
+          >
+            <StyledPagination
+              key={item}
+              children={item}
+              className={props.currentPage === item ? "active" : ""}
+            />
+          </a>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  });
 
   return (
     <div className="pagination__wrapper flex-row">
