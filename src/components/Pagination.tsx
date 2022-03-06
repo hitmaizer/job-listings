@@ -2,9 +2,12 @@ import React from "react";
 import { NavigateBefore, NavigateNext } from "styled-icons/material";
 import StyledPagination from "../elements/StyledPagination";
 
-type Props = {};
+type Props = {
+  postsPerPage: number;
+  totalPosts: number;
+};
 
-function Pagination({}: Props) {
+const Pagination: React.FC<Props> = (props: Props) => {
   return (
     <div className="pagination__wrapper flex-row">
       <StyledPagination>
@@ -15,6 +18,6 @@ function Pagination({}: Props) {
       </StyledPagination>
     </div>
   );
-}
+};
 
 export default Pagination;
