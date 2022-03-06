@@ -47,12 +47,20 @@ const Pagination: React.FC<Props> = (props: Props) => {
     }
   });
 
+  let pageIncrementBtn = null;
+  if (pageNumbers.length > props.maxPageNumberLimit) {
+    pageIncrementBtn = (
+      <StyledPagination onClick={props.nextPage}>&hellip;</StyledPagination>
+    );
+  }
+
   return (
     <div className="pagination__wrapper flex-row">
       <StyledPagination onClick={props.prevPage}>
         <NavigateBefore size="16px" />
       </StyledPagination>
       {paginationElements}
+      {pageIncrementBtn}
       <StyledPagination onClick={props.nextPage}>
         <NavigateNext size="16px" />
       </StyledPagination>
