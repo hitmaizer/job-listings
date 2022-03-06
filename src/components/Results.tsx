@@ -41,10 +41,7 @@ const Results: React.FC<Props> = (props: Props) => {
   });
 
   return (
-    <div className="section__wrapper flex-col results">
-      {cardElements}
-      <Pagination />
-    </div>
+    <div className="section__wrapper flex-col results">{cardElements}</div>
   );
 };
 
