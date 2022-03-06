@@ -69,6 +69,9 @@
 .pagination__wrapper {
   place-content: flex-end;
   gap: 12px;
+  width: 100%;
+  margin-right: 15%;
+  margin-top: 32px;
 }
 
 .card__wrapper {
