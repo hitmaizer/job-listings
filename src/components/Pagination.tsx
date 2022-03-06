@@ -5,6 +5,7 @@ import StyledPagination from "../elements/StyledPagination";
 type Props = {
   postsPerPage: number;
   totalPosts: number;
+  currentPage: number;
   paginate: (a: number) => void;
 };
 
@@ -23,7 +24,11 @@ const Pagination: React.FC<Props> = (props: Props) => {
         href="!#"
         className="item__link"
       >
-        <StyledPagination key={item} children={item} />
+        <StyledPagination
+          key={item}
+          children={item}
+          className={props.currentPage === item ? "active" : ""}
+        />
       </a>
     </div>
   ));
