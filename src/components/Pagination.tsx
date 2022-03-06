@@ -10,6 +10,8 @@ type Props = {
   minPageNumberLimit: number;
   pageNumberLimit: number;
   paginate: (a: number) => void;
+  nextPage: () => void;
+  prevPage: () => void;
 };
 
 const Pagination: React.FC<Props> = (props: Props) => {
@@ -47,11 +49,11 @@ const Pagination: React.FC<Props> = (props: Props) => {
 
   return (
     <div className="pagination__wrapper flex-row">
-      <StyledPagination>
+      <StyledPagination onClick={props.prevPage}>
         <NavigateBefore size="16px" />
       </StyledPagination>
       {paginationElements}
-      <StyledPagination>
+      <StyledPagination onClick={props.nextPage}>
         <NavigateNext size="16px" />
       </StyledPagination>
     </div>
