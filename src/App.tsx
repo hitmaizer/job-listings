@@ -14,7 +14,7 @@ const App: FC = () => {
   const [allData, setAllData] = React.useState<DataObj["posts"]>(Data);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [postsPerPage, setPostsPerPage] = React.useState(5);
-  const [pageNumberLimit, setPageNumberLimit] = React.useState(5);
+  const [pageNumberLimit, setPageNumberLimit] = React.useState(3);
   const [maxPageNumberLimit, setMaxPageNumberLimit] = React.useState(3);
   const [minPageNumberLimit, setMinPageNumberLimit] = React.useState(0);
 
@@ -26,6 +26,26 @@ const App: FC = () => {
 
   //Change page
   const paginate = (item: number) => setCurrentPage(item);
+
+  //Handle next page
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+
+    if (currentPage + 1 > maxPageNumberLimit) {
+      setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
+      setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
+    }
+  };
+
+  //Handle prev page
+  const handlePrevPage = () => {
+    setCurrentPage(currentPage - 1);
+
+    if ((currentPage - 1) % pageNumberLimit === 0) {
+      setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
+      setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+    }
+  };
 
   return (
     <div className="page__wrapper flex-col">
@@ -51,6 +71,8 @@ const App: FC = () => {
               pageNumberLimit={pageNumberLimit}
               maxPageNumberLimit={maxPageNumberLimit}
               minPageNumberLimit={minPageNumberLimit}
+              prevPage={handlePrevPage}
+              nextPage={handleNextPage}
             />
           </>
         )}
