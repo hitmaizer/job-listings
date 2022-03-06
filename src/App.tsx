@@ -44,6 +44,7 @@ const App: FC = () => {
               postsPerPage={postsPerPage}
               totalPosts={allData.length}
               paginate={paginate}
+              currentPage={currentPage}
             />
           </>
         )}
