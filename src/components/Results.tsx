@@ -1,5 +1,4 @@
 import React from "react";
-import Pagination from "./Pagination";
 import ResultCard from "./ResultCard";
 
 interface Props {
