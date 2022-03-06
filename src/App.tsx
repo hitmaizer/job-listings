@@ -7,6 +7,7 @@ import Results from "./components/Results";
 import Article from "./components/Article";
 import Data from "./Data.json";
 import { DataObj } from "./interfaces/DataInterface";
+import Pagination from "./components/Pagination";
 
 const App: FC = () => {
   const [searching, setSearching] = React.useState(true);
@@ -36,9 +37,14 @@ const App: FC = () => {
               <LocationSearchbar />
               <Results posts={currentPosts} />
             </div>
+            <Pagination
+              postsPerPage={postsPerPage}
+              totalPosts={allData.length}
+            />
           </>
         )}
         {searching === false && <Article />}
+
         <footer className="footer__sign">
           <p className="sign">
             created by
