@@ -21,6 +21,9 @@ const App: FC = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = allData.slice(indexOfFirstPost, indexOfLastPost);
 
+  //Change page
+  const paginate = (item: number) => setCurrentPage(item);
+
   return (
     <div className="page__wrapper flex-col">
       <ThemeProvider theme={Theme}>
@@ -40,6 +43,7 @@ const App: FC = () => {
             <Pagination
               postsPerPage={postsPerPage}
               totalPosts={allData.length}
+              paginate={paginate}
             />
           </>
         )}
