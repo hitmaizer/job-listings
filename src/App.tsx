@@ -10,13 +10,13 @@ import { DataObj } from "./interfaces/DataInterface";
 import Pagination from "./components/Pagination";
 
 const App: FC = () => {
-  const [searching, setSearching] = React.useState(true);
+  const [searching, setSearching] = React.useState<boolean>(true);
   const [allData, setAllData] = React.useState<DataObj["posts"]>(Data);
-  const [currentPage, setCurrentPage] = React.useState(1);
-  const [postsPerPage, setPostsPerPage] = React.useState(5);
-  const [pageNumberLimit, setPageNumberLimit] = React.useState(3);
-  const [maxPageNumberLimit, setMaxPageNumberLimit] = React.useState(3);
-  const [minPageNumberLimit, setMinPageNumberLimit] = React.useState(0);
+  const [currentPage, setCurrentPage] = React.useState<number>(1);
+  const [postsPerPage, setPostsPerPage] = React.useState<number>(5);
+  const [pageNumberLimit, setPageNumberLimit] = React.useState<number>(3);
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = React.useState<number>(3);
+  const [minPageNumberLimit, setMinPageNumberLimit] = React.useState<number>(0);
 
   const randomNumber = Math.floor(Math.random() * allData.length);
 
