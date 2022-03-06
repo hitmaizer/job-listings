@@ -18,8 +18,6 @@ const App: FC = () => {
   const [maxPageNumberLimit, setMaxPageNumberLimit] = React.useState<number>(3);
   const [minPageNumberLimit, setMinPageNumberLimit] = React.useState<number>(0);
 
-  const randomNumber = Math.floor(Math.random() * allData.length);
-
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = allData.slice(indexOfFirstPost, indexOfLastPost);
@@ -29,21 +27,25 @@ const App: FC = () => {
 
   //Handle next page
   const handleNextPage = () => {
-    setCurrentPage(currentPage + 1);
+    if (currentPage + 1 < 11) {
+      setCurrentPage(currentPage + 1);
 
-    if (currentPage + 1 > maxPageNumberLimit) {
-      setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
-      setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
+      if (currentPage + 1 > maxPageNumberLimit) {
+        setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
+        setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
+      }
     }
   };
 
   //Handle prev page
   const handlePrevPage = () => {
-    setCurrentPage(currentPage - 1);
+    if (currentPage - 1 > 0) {
+      setCurrentPage(currentPage - 1);
 
-    if ((currentPage - 1) % pageNumberLimit === 0) {
-      setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
-      setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+      if ((currentPage - 1) % pageNumberLimit === 0) {
+        setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
+        setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+      }
     }
   };
 
