@@ -58,12 +58,16 @@ const App: FC = () => {
   const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchWord = e.target.value;
     setTypedData(searchWord);
+  };
+
+  //Search btn API call
+  const searchCall = () => {
     setLoading(true);
     async function fetchData() {
       const request = await axios
-        .get(`https://remotive.io/api/remote-jobs?search=${searchWord}`)
+        .get(`https://remotive.io/api/remote-jobs?search=${typedData}`)
         .then((response) => {
-          if (searchWord === "") {
+          if (typedData === "") {
             setFilteredData([]);
           } else {
             setFilteredData(response.data.jobs);
@@ -92,7 +96,10 @@ const App: FC = () => {
                 Jobs
               </h6>
             </header>
-            <PositionSearchbar handleFilter={handleFilter} />
+            <PositionSearchbar
+              handleFilter={handleFilter}
+              filteredData={filteredData}
+            />
             <div className="bottom__container flex-row">
               <LocationSearchbar />
               <Results posts={currentPosts} />
