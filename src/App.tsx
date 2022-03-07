@@ -85,6 +85,8 @@ const App: FC = () => {
     fetchData();
   };
 
+  console.log(filteredData);
+
   return (
     <div className="page__wrapper flex-col">
       <ThemeProvider theme={Theme}>
@@ -99,6 +101,7 @@ const App: FC = () => {
             <PositionSearchbar
               handleFilter={handleFilter}
               filteredData={filteredData}
+              searchCall={searchCall}
             />
             <div className="bottom__container flex-row">
               <LocationSearchbar />
