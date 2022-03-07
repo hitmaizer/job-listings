@@ -19,6 +19,7 @@ interface Props {
 }
 
 const ResultCard: FC<Props> = (props: Props) => {
+  console.log(props.publication_date);
   return (
     <StyledCard className="card__wrapper flex-row">
       <img src={props.company_logo} alt="" className="card__img" />
