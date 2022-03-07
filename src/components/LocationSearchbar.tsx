@@ -3,7 +3,7 @@ import { Globe } from "styled-icons/entypo";
 
 interface Props {
   fulltimeFilter: boolean;
-  fulltimeFilterHandle: () => void;
+  handleFilter: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const LocationSearchbar: FC<Props> = (props: Props) => {
@@ -16,10 +16,10 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           checked={props.fulltimeFilter}
           id="fulltime"
           name="fulltimeFilter"
-          onChange={props.fulltimeFilterHandle}
+          onChange={props.handleFilter}
         />
         <label className="fulltime__text" htmlFor="fulltime">
-          Full time
+          Only Full time
         </label>
       </div>
       <h6 className="sidebar__title">Location</h6>
