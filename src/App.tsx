@@ -22,6 +22,7 @@ const App: FC = () => {
   const [error, setError] = React.useState<string>("");
   const [filteredData, setFilteredData] = React.useState<any[]>([]);
   const [typedData, setTypedData] = React.useState<string>("");
+  const [fulltimeFilter, setFulltimeFilter] = React.useState<boolean>(false);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -64,7 +65,23 @@ const App: FC = () => {
       setTypedData("");
       setAllData(Data);
     }
+
+    //checkbox Filter
+    setFulltimeFilter(!fulltimeFilter);
   };
+
+  React.useEffect(() => {
+    let filteredFulltime: any[] = [];
+    allData.map((item) => {
+      if (item.job_type === "full_time") {
+        filteredFulltime.push(item);
+      }
+    });
+    setAllData(filteredFulltime);
+    if (fulltimeFilter === false) {
+      setAllData(Data);
+    }
+  }, [fulltimeFilter]);
 
   //Search btn API call
   const searchCall = () => {
@@ -91,7 +108,12 @@ const App: FC = () => {
     fetchData();
   };
 
-  console.log(filteredData);
+  //Full time filter
+
+  console.log(fulltimeFilter);
+
+  //location filter
+  //specific article (state prob)
 
   return (
     <div className="page__wrapper flex-col">
@@ -100,7 +122,7 @@ const App: FC = () => {
           <>
             <header className="page__header">
               <h6 className="header__logo">
-                <span className="strong__text">Github </span>
+                <span className="strong__text">Remote </span>
                 Jobs
               </h6>
             </header>
@@ -110,7 +132,10 @@ const App: FC = () => {
               searchCall={searchCall}
             />
             <div className="bottom__container flex-row">
-              <LocationSearchbar />
+              <LocationSearchbar
+                fulltimeFilter={fulltimeFilter}
+                handleFilter={handleFilter}
+              />
               <Results posts={currentPosts} />
             </div>
             <Pagination
