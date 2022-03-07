@@ -58,6 +58,12 @@ const App: FC = () => {
   const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchWord = e.target.value;
     setTypedData(searchWord);
+
+    //handle results render
+    if (searchWord === "") {
+      setTypedData("");
+      setAllData(Data);
+    }
   };
 
   //Search btn API call
