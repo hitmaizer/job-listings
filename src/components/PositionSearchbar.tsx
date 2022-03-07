@@ -3,6 +3,7 @@ import { BriefcaseFill } from "styled-icons/bootstrap";
 
 interface Props {
   handleFilter: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  filteredData: any[];
 }
 
 const PositionSearchbar: FC<Props> = (props: Props) => {
