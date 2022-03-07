@@ -1,7 +1,11 @@
 import React, { FC } from "react";
 import { BriefcaseFill } from "styled-icons/bootstrap";
 
-const PositionSearchbar: FC = () => {
+interface Props {
+  handleFilter: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const PositionSearchbar: FC<Props> = (props: Props) => {
   return (
     <div className="section__wrapper position flex-col">
       <div className="input__container">
@@ -10,6 +14,7 @@ const PositionSearchbar: FC = () => {
           type="text"
           className="search__input"
           placeholder="Title, companies, expertise or benefits"
+          onChange={(e) => props.handleFilter(e)}
         />
         <button className="search__btn">Search</button>
       </div>
