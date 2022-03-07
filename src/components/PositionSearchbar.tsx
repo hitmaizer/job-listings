@@ -4,6 +4,7 @@ import { BriefcaseFill } from "styled-icons/bootstrap";
 interface Props {
   handleFilter: (e: React.ChangeEvent<HTMLInputElement>) => void;
   filteredData: any[];
+  searchCall: () => void;
 }
 
 const PositionSearchbar: FC<Props> = (props: Props) => {
@@ -17,7 +18,9 @@ const PositionSearchbar: FC<Props> = (props: Props) => {
           placeholder="Title, companies, expertise or benefits"
           onChange={(e) => props.handleFilter(e)}
         />
-        <button className="search__btn">Search</button>
+        <button onClick={props.searchCall} className="search__btn">
+          Search
+        </button>
       </div>
     </div>
   );
