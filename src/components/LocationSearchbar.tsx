@@ -15,6 +15,7 @@ const LocationSearchbar: FC = () => {
           type="text"
           className="location__search"
           placeholder="City, state, zip code or country"
+          disabled={true}
         />
       </div>
       <div className="radio__item flex-row">
