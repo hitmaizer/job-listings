@@ -1,12 +1,26 @@
 import React, { FC } from "react";
 import { Globe } from "styled-icons/entypo";
 
-const LocationSearchbar: FC = () => {
+interface Props {
+  fulltimeFilter: boolean;
+  fulltimeFilterHandle: () => void;
+}
+
+const LocationSearchbar: FC<Props> = (props: Props) => {
   return (
     <div className="section__wrapper flex-col">
       <div className="sidebar__checkbox flex-row">
-        <input type="checkbox" className="fulltime__checkbox" />
-        <p className="fulltime__text">Full time</p>
+        <input
+          type="checkbox"
+          className="fulltime__checkbox"
+          checked={props.fulltimeFilter}
+          id="fulltime"
+          name="fulltimeFilter"
+          onChange={props.fulltimeFilterHandle}
+        />
+        <label className="fulltime__text" htmlFor="fulltime">
+          Full time
+        </label>
       </div>
       <h6 className="sidebar__title">Location</h6>
       <div className="input__container--location">
