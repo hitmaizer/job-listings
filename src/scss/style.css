@@ -97,6 +97,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-width: 200px;
 }
 
 .card__img {
@@ -118,6 +119,7 @@
   line-height: 21px;
   color: #334680;
   margin-top: 8px;
+  max-width: 200px;
 }
 
 .info__badge {
@@ -135,8 +137,14 @@
 .card__details {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   color: #b9bdcf;
   gap: 16px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .detail__item {
