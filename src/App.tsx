@@ -108,10 +108,6 @@ const App: FC = () => {
     fetchData();
   };
 
-  //Full time filter
-
-  console.log(fulltimeFilter);
-
   //location filter
   //specific article (state prob)
 
