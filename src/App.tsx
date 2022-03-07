@@ -17,6 +17,10 @@ const App: FC = () => {
   const [pageNumberLimit, setPageNumberLimit] = React.useState<number>(3);
   const [maxPageNumberLimit, setMaxPageNumberLimit] = React.useState<number>(3);
   const [minPageNumberLimit, setMinPageNumberLimit] = React.useState<number>(0);
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [error, setError] = React.useState<string>("");
+  const [filteredData, setFilteredData] = React.useState<any[]>([]);
+  const [typedData, setTypedData] = React.useState<string>("");
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -49,6 +53,12 @@ const App: FC = () => {
     }
   };
 
+  //Handle Filter
+  const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const searchWord = e.target.value;
+    console.log(searchWord);
+  };
+
   return (
     <div className="page__wrapper flex-col">
       <ThemeProvider theme={Theme}>
@@ -60,7 +70,7 @@ const App: FC = () => {
                 Jobs
               </h6>
             </header>
-            <PositionSearchbar />
+            <PositionSearchbar handleFilter={handleFilter} />
             <div className="bottom__container flex-row">
               <LocationSearchbar />
               <Results posts={currentPosts} />
