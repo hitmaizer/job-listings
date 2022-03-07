@@ -8,6 +8,7 @@ import Article from "./components/Article";
 import Data from "./Data.json";
 import { DataObj } from "./interfaces/DataInterface";
 import Pagination from "./components/Pagination";
+import axios from "axios";
 
 const App: FC = () => {
   const [searching, setSearching] = React.useState<boolean>(true);
@@ -56,7 +57,28 @@ const App: FC = () => {
   //Handle Filter
   const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchWord = e.target.value;
-    console.log(searchWord);
+    setTypedData(searchWord);
+    setLoading(true);
+    async function fetchData() {
+      const request = await axios
+        .get(`https://remotive.io/api/remote-jobs?search=${searchWord}`)
+        .then((response) => {
+          if (searchWord === "") {
+            setFilteredData([]);
+          } else {
+            setFilteredData(response.data.jobs);
+          }
+        })
+        .catch((error) => {
+          setError(error);
+          console.log(error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+      return request;
+    }
+    fetchData();
   };
 
   return (
