@@ -1,5 +1,6 @@
 import React from "react";
 import ResultCard from "./ResultCard";
+import moment from "moment";
 
 interface Props {
   posts: {
@@ -21,6 +22,8 @@ interface Props {
 
 const Results: React.FC<Props> = (props: Props) => {
   const cardElements = props.posts.map((item) => {
+    let m = moment(item.publication_date);
+
     return (
       <ResultCard
         key={item.id}
@@ -31,7 +34,7 @@ const Results: React.FC<Props> = (props: Props) => {
         category={item.category}
         tags={item.tags}
         job_type={item.job_type}
-        publication_date={item.publication_date}
+        publication_date={m.fromNow()}
         candidate_required_location={item.candidate_required_location}
         salary={item.salary}
         description={item.description}
