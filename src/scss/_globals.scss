@@ -20,6 +20,11 @@
 .page__wrapper {
   background-color: $offWhite;
   min-height: 100vh;
+  display: flex;
+  place-content: center;
+}
+
+.content__wrapper {
   align-items: center;
   max-width: 1440px;
 }
