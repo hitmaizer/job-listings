@@ -135,7 +135,9 @@
   padding: 6px 8px;
   border: solid 1px #334680;
   border-radius: 4px;
-  width: 65px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-top: 12px;
 }
 
