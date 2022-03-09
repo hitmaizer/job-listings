@@ -6,6 +6,7 @@ interface Props {
   handleFilter: (e: React.ChangeEvent<HTMLInputElement>) => void;
   locationFilter: string;
   handleLocation: (a: string) => void;
+  handleFulltime: () => void;
 }
 
 const LocationSearchbar: FC<Props> = (props: Props) => {
@@ -18,7 +19,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           checked={props.fulltimeFilter}
           id="fulltime"
           name="fulltimeFilter"
-          onChange={props.handleFilter}
+          onChange={props.handleFulltime}
         />
         <label className="fulltime__text" htmlFor="fulltime">
           Only Full time
