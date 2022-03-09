@@ -33,31 +33,46 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
         />
       </div>
       <div className="radio__item flex-row">
-        <input type="radio" className="location__radio" value="Worldwide" />
+        <input
+          type="radio"
+          className="location__radio"
+          value="Worldwide"
+          id="Worldwide"
+        />
         <label htmlFor="Worldwide" className="radio__label">
           Worldwide
         </label>
       </div>
       <div className="radio__item flex-row">
-        <input type="radio" className="location__radio" value="Europe" />
+        <input
+          type="radio"
+          className="location__radio"
+          value="Europe"
+          id="Europe"
+        />
         <label htmlFor="Europe" className="radio__label">
           Europe
         </label>
       </div>
       <div className="radio__item flex-row">
-        <input type="radio" className="location__radio" value="USA" />
+        <input type="radio" className="location__radio" value="USA" id="USA" />
         <label htmlFor="USA" className="radio__label">
           USA
         </label>
       </div>
       <div className="radio__item flex-row">
-        <input type="radio" className="location__radio" value="UK" />
+        <input type="radio" className="location__radio" value="UK" id="UK" />
         <label htmlFor="UK" className="radio__label">
           UK
         </label>
       </div>
       <div className="radio__item flex-row">
-        <input type="radio" className="location__radio" value="Germany" />
+        <input
+          type="radio"
+          className="location__radio"
+          value="Germany"
+          id="Germany"
+        />
         <label htmlFor="Germany" className="radio__label">
           Germany
         </label>
