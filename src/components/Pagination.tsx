@@ -10,7 +10,7 @@ type Props = {
   minPageNumberLimit: number;
   pageNumberLimit: number;
   paginate: (a: number) => void;
-  nextPage: () => void;
+  nextPage: (a: number[]) => void;
   prevPage: () => void;
 };
 
@@ -49,9 +49,7 @@ const Pagination: React.FC<Props> = (props: Props) => {
 
   let pageIncrementBtn = null;
   if (pageNumbers.length > props.maxPageNumberLimit) {
-    pageIncrementBtn = (
-      <StyledPagination onClick={props.nextPage}>&hellip;</StyledPagination>
-    );
+    pageIncrementBtn = <StyledPagination>&hellip;</StyledPagination>;
   }
 
   return (
@@ -61,7 +59,7 @@ const Pagination: React.FC<Props> = (props: Props) => {
       </StyledPagination>
       {paginationElements}
       {pageIncrementBtn}
-      <StyledPagination onClick={props.nextPage}>
+      <StyledPagination onClick={() => props.nextPage(pageNumbers)}>
         <NavigateNext size="16px" />
       </StyledPagination>
     </div>
