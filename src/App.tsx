@@ -96,7 +96,7 @@ const App: FC = () => {
           if (typedData === "") {
             setFilteredData([]);
           } else {
-            setFilteredData(response.data.jobs);
+            setDisplayData(response.data.jobs);
           }
         })
         .catch((error) => {
@@ -129,7 +129,6 @@ const App: FC = () => {
   console.log(filteredData);
   console.log(displayData);
 
-  //location filter
   //specific article (state prob)
 
   return (
