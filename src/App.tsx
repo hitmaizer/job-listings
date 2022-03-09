@@ -151,12 +151,12 @@ const App: FC = () => {
 
         <footer className="footer__sign">
           <p className="sign">
-            created by
+            created by{" "}
             <b>
               <u>
                 <a href="http://github.com/hitmaizer">Jose Alves</a>
               </u>
-            </b>
+            </b>{" "}
             - devChallenges.io
           </p>
         </footer>
