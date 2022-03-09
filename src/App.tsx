@@ -161,7 +161,9 @@ const App: FC = () => {
               </div>
               <Pagination
                 postsPerPage={postsPerPage}
-                totalPosts={displayData.length}
+                totalPosts={
+                  filteredData ? filteredData.length : displayData.length
+                }
                 paginate={paginate}
                 currentPage={currentPage}
                 pageNumberLimit={pageNumberLimit}
