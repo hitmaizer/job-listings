@@ -95,7 +95,7 @@ const App: FC = () => {
           if (typedData === "") {
             setFilteredData([]);
           } else {
-            setAllData(response.data.jobs);
+            setCurrentPosts(response.data.jobs);
           }
         })
         .catch((error) => {
