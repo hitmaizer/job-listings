@@ -5,6 +5,7 @@ interface Props {
   fulltimeFilter: boolean;
   handleFilter: (e: React.ChangeEvent<HTMLInputElement>) => void;
   locationFilter: string;
+  handleLocation: (a: string) => void;
 }
 
 const LocationSearchbar: FC<Props> = (props: Props) => {
@@ -41,6 +42,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           id="Worldwide"
           name="location"
           checked={props.locationFilter === "Worldwide"}
+          onChange={() => props.handleLocation("Worldwide")}
         />
         <label htmlFor="Worldwide" className="radio__label">
           Worldwide
@@ -54,6 +56,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           id="Europe"
           name="location"
           checked={props.locationFilter === "Europe"}
+          onChange={() => props.handleLocation("Europe")}
         />
         <label htmlFor="Europe" className="radio__label">
           Europe
@@ -67,6 +70,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           id="USA"
           name="location"
           checked={props.locationFilter === "USA"}
+          onChange={() => props.handleLocation("USA")}
         />
         <label htmlFor="USA" className="radio__label">
           USA
@@ -80,6 +84,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           id="UK"
           name="location"
           checked={props.locationFilter === "UK"}
+          onChange={() => props.handleLocation("UK")}
         />
         <label htmlFor="UK" className="radio__label">
           UK
@@ -93,6 +98,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           id="Germany"
           name="location"
           checked={props.locationFilter === "Germany"}
+          onChange={() => props.handleLocation("Germany")}
         />
         <label htmlFor="Germany" className="radio__label">
           Germany
