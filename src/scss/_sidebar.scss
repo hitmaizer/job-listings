@@ -71,6 +71,7 @@
 input[type="radio"] {
   border: solid 1px $lightGray;
   background-color: transparent;
+  cursor: pointer;
   &:active {
     color: $primaryBlue;
   }
