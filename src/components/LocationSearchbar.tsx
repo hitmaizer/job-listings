@@ -33,33 +33,33 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
         />
       </div>
       <div className="radio__item flex-row">
-        <input type="radio" className="location__radio" value="London" />
-        <label htmlFor="London" className="radio__label">
-          London
-        </label>
-      </div>
-      <div className="radio__item flex-row">
-        <input type="radio" className="location__radio" value="Amesterdam" />
-        <label htmlFor="Amesterdam" className="radio__label">
-          Amesterdam
-        </label>
-      </div>
-      <div className="radio__item flex-row">
-        <input type="radio" className="location__radio" value="New York" />
-        <label htmlFor="New York" className="radio__label">
-          New York
-        </label>
-      </div>
-      <div className="radio__item flex-row">
-        <input type="radio" className="location__radio" value="Berlin" />
-        <label htmlFor="Berlin" className="radio__label">
-          Berlin
-        </label>
-      </div>
-      <div className="radio__item flex-row">
         <input type="radio" className="location__radio" value="Worldwide" />
         <label htmlFor="Worldwide" className="radio__label">
           Worldwide
+        </label>
+      </div>
+      <div className="radio__item flex-row">
+        <input type="radio" className="location__radio" value="Europe" />
+        <label htmlFor="Europe" className="radio__label">
+          Europe
+        </label>
+      </div>
+      <div className="radio__item flex-row">
+        <input type="radio" className="location__radio" value="USA" />
+        <label htmlFor="USA" className="radio__label">
+          USA
+        </label>
+      </div>
+      <div className="radio__item flex-row">
+        <input type="radio" className="location__radio" value="UK" />
+        <label htmlFor="UK" className="radio__label">
+          UK
+        </label>
+      </div>
+      <div className="radio__item flex-row">
+        <input type="radio" className="location__radio" value="Germany" />
+        <label htmlFor="Germany" className="radio__label">
+          Germany
         </label>
       </div>
     </div>
