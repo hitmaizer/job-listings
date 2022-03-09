@@ -66,8 +66,10 @@ const App: FC = () => {
       setTypedData("");
       setAllData(Data);
     }
+  };
 
-    //checkbox Filter
+  //checkbox Filter
+  const handleFulltime = () => {
     setFulltimeFilter(!fulltimeFilter);
   };
 
@@ -127,6 +129,8 @@ const App: FC = () => {
     }
   }, [locationFilter]);
 
+  console.log(filteredData);
+
   //location filter
   //specific article (state prob)
 
@@ -153,6 +157,7 @@ const App: FC = () => {
                   handleFilter={handleFilter}
                   locationFilter={locationFilter}
                   handleLocation={handleLocation}
+                  handleFulltime={handleFulltime}
                 />
                 <Results posts={currentPosts} />
               </div>
