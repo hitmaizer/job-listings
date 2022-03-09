@@ -56,6 +56,12 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           Berlin
         </label>
       </div>
+      <div className="radio__item flex-row">
+        <input type="radio" className="location__radio" value="Worldwide" />
+        <label htmlFor="Worldwide" className="radio__label">
+          Worldwide
+        </label>
+      </div>
     </div>
   );
 };
