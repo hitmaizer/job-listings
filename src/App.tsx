@@ -72,7 +72,7 @@ const App: FC = () => {
   };
 
   React.useEffect(() => {
-    let filteredFulltime: any[] = [];
+    let filteredFulltime: DataObj["posts"] = [];
     allData.map((item) => {
       if (item.job_type === "full_time") {
         filteredFulltime.push(item);
@@ -109,6 +109,24 @@ const App: FC = () => {
     fetchData();
   };
 
+  //Handle Location
+  const handleLocation = (a: string) => {
+    setLocationFilter(a);
+  };
+
+  //useEffect on locationFilter change
+  React.useEffect(() => {
+    const newFilter = allData.filter((value) => {
+      return value.candidate_required_location
+        .toLowerCase()
+        .includes(locationFilter.toLocaleLowerCase());
+    });
+    setFilteredData(newFilter);
+    if (locationFilter === "") {
+      setAllData(Data);
+    }
+  }, [locationFilter]);
+
   //location filter
   //specific article (state prob)
 
@@ -134,6 +152,7 @@ const App: FC = () => {
                   fulltimeFilter={fulltimeFilter}
                   handleFilter={handleFilter}
                   locationFilter={locationFilter}
+                  handleLocation={handleLocation}
                 />
                 <Results posts={currentPosts} />
               </div>
