@@ -23,6 +23,7 @@ const App: FC = () => {
   const [filteredData, setFilteredData] = React.useState<any[]>([]);
   const [typedData, setTypedData] = React.useState<string>("");
   const [fulltimeFilter, setFulltimeFilter] = React.useState<boolean>(false);
+  const [locationFilter, setLocationFilter] = React.useState<string>("");
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -132,6 +133,7 @@ const App: FC = () => {
                 <LocationSearchbar
                   fulltimeFilter={fulltimeFilter}
                   handleFilter={handleFilter}
+                  locationFilter={locationFilter}
                 />
                 <Results posts={currentPosts} />
               </div>
