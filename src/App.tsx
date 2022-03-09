@@ -35,8 +35,8 @@ const App: FC = () => {
   const paginate = (item: number) => setCurrentPage(item);
 
   //Handle next page
-  const handleNextPage = () => {
-    if (currentPage + 1 < 11) {
+  const handleNextPage = (a: number[]) => {
+    if (currentPage + 1 <= a.length) {
       setCurrentPage(currentPage + 1);
 
       if (currentPage + 1 > maxPageNumberLimit) {
@@ -117,6 +117,7 @@ const App: FC = () => {
 
   //useEffect on locationFilter change
   React.useEffect(() => {
+    setCurrentPage(1);
     if (locationFilter !== "") {
       const newFilter = allData.filter((value) => {
         return value.candidate_required_location
