@@ -24,10 +24,13 @@ const App: FC = () => {
   const [typedData, setTypedData] = React.useState<string>("");
   const [fulltimeFilter, setFulltimeFilter] = React.useState<boolean>(false);
   const [locationFilter, setLocationFilter] = React.useState<string>("");
+  const [displayData, setDisplayData] = React.useState<DataObj["posts"]>(Data);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = allData.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = filteredData
+    ? filteredData.slice(indexOfFirstPost, indexOfLastPost)
+    : displayData.slice(indexOfFirstPost, indexOfLastPost);
 
   //Change page
   const paginate = (item: number) => setCurrentPage(item);
@@ -56,7 +59,7 @@ const App: FC = () => {
     }
   };
 
-  //Handle Filter
+  //Handle Search
   const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchWord = e.target.value;
     setTypedData(searchWord);
@@ -64,7 +67,6 @@ const App: FC = () => {
     //handle results render
     if (searchWord === "") {
       setTypedData("");
-      setAllData(Data);
     }
   };
 
@@ -74,15 +76,13 @@ const App: FC = () => {
   };
 
   React.useEffect(() => {
-    let filteredFulltime: DataObj["posts"] = [];
-    allData.map((item) => {
-      if (item.job_type === "full_time") {
-        filteredFulltime.push(item);
-      }
-    });
-    setAllData(filteredFulltime);
-    if (fulltimeFilter === false) {
-      setAllData(Data);
+    if (fulltimeFilter === true) {
+      let fulltimeFiltered = displayData.filter((value) => {
+        return value.job_type.includes("full_time");
+      });
+      setFilteredData(fulltimeFiltered);
+    } else {
+      setFilteredData(displayData);
     }
   }, [fulltimeFilter]);
 
@@ -118,18 +118,16 @@ const App: FC = () => {
 
   //useEffect on locationFilter change
   React.useEffect(() => {
-    const newFilter = allData.filter((value) => {
+    const newFilter = displayData.filter((value) => {
       return value.candidate_required_location
         .toLowerCase()
         .includes(locationFilter.toLocaleLowerCase());
     });
     setFilteredData(newFilter);
-    if (locationFilter === "") {
-      setAllData(Data);
-    }
   }, [locationFilter]);
 
   console.log(filteredData);
+  console.log(displayData);
 
   //location filter
   //specific article (state prob)
@@ -163,7 +161,7 @@ const App: FC = () => {
               </div>
               <Pagination
                 postsPerPage={postsPerPage}
-                totalPosts={allData.length}
+                totalPosts={displayData.length}
                 paginate={paginate}
                 currentPage={currentPage}
                 pageNumberLimit={pageNumberLimit}
