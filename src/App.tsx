@@ -112,55 +112,57 @@ const App: FC = () => {
   //specific article (state prob)
 
   return (
-    <div className="page__wrapper flex-col">
-      <ThemeProvider theme={Theme}>
-        {searching === true && (
-          <>
-            <header className="page__header">
-              <h6 className="header__logo">
-                <span className="strong__text">Remote </span>
-                Jobs
-              </h6>
-            </header>
-            <PositionSearchbar
-              handleFilter={handleFilter}
-              filteredData={filteredData}
-              searchCall={searchCall}
-            />
-            <div className="bottom__container flex-row">
-              <LocationSearchbar
-                fulltimeFilter={fulltimeFilter}
+    <div className="page__wrapper">
+      <div className="content__wrapper flex-col">
+        <ThemeProvider theme={Theme}>
+          {searching === true && (
+            <>
+              <header className="page__header">
+                <h6 className="header__logo">
+                  <span className="strong__text">Remote </span>
+                  Jobs
+                </h6>
+              </header>
+              <PositionSearchbar
                 handleFilter={handleFilter}
+                filteredData={filteredData}
+                searchCall={searchCall}
               />
-              <Results posts={currentPosts} />
-            </div>
-            <Pagination
-              postsPerPage={postsPerPage}
-              totalPosts={allData.length}
-              paginate={paginate}
-              currentPage={currentPage}
-              pageNumberLimit={pageNumberLimit}
-              maxPageNumberLimit={maxPageNumberLimit}
-              minPageNumberLimit={minPageNumberLimit}
-              prevPage={handlePrevPage}
-              nextPage={handleNextPage}
-            />
-          </>
-        )}
-        {searching === false && <Article />}
+              <div className="bottom__container flex-row">
+                <LocationSearchbar
+                  fulltimeFilter={fulltimeFilter}
+                  handleFilter={handleFilter}
+                />
+                <Results posts={currentPosts} />
+              </div>
+              <Pagination
+                postsPerPage={postsPerPage}
+                totalPosts={allData.length}
+                paginate={paginate}
+                currentPage={currentPage}
+                pageNumberLimit={pageNumberLimit}
+                maxPageNumberLimit={maxPageNumberLimit}
+                minPageNumberLimit={minPageNumberLimit}
+                prevPage={handlePrevPage}
+                nextPage={handleNextPage}
+              />
+            </>
+          )}
+          {searching === false && <Article />}
 
-        <footer className="footer__sign">
-          <p className="sign">
-            created by{" "}
-            <b>
-              <u>
-                <a href="http://github.com/hitmaizer">Jose Alves</a>
-              </u>
-            </b>{" "}
-            - devChallenges.io
-          </p>
-        </footer>
-      </ThemeProvider>
+          <footer className="footer__sign">
+            <p className="sign">
+              created by{" "}
+              <b>
+                <u>
+                  <a href="http://github.com/hitmaizer">Jose Alves</a>
+                </u>
+              </b>{" "}
+              - devChallenges.io
+            </p>
+          </footer>
+        </ThemeProvider>
+      </div>
     </div>
   );
 };
