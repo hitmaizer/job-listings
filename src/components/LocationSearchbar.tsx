@@ -4,6 +4,7 @@ import { Globe } from "styled-icons/entypo";
 interface Props {
   fulltimeFilter: boolean;
   handleFilter: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  locationFilter: string;
 }
 
 const LocationSearchbar: FC<Props> = (props: Props) => {
@@ -39,6 +40,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           value="Worldwide"
           id="Worldwide"
           name="location"
+          checked={props.locationFilter === "Worldwide"}
         />
         <label htmlFor="Worldwide" className="radio__label">
           Worldwide
@@ -51,6 +53,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           value="Europe"
           id="Europe"
           name="location"
+          checked={props.locationFilter === "Europe"}
         />
         <label htmlFor="Europe" className="radio__label">
           Europe
@@ -63,6 +66,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           value="USA"
           id="USA"
           name="location"
+          checked={props.locationFilter === "USA"}
         />
         <label htmlFor="USA" className="radio__label">
           USA
@@ -75,6 +79,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           value="UK"
           id="UK"
           name="location"
+          checked={props.locationFilter === "UK"}
         />
         <label htmlFor="UK" className="radio__label">
           UK
@@ -87,6 +92,7 @@ const LocationSearchbar: FC<Props> = (props: Props) => {
           value="Germany"
           id="Germany"
           name="location"
+          checked={props.locationFilter === "Germany"}
         />
         <label htmlFor="Germany" className="radio__label">
           Germany
