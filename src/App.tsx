@@ -131,6 +131,9 @@ const App: FC = () => {
   console.log(currentPosts);
 
   //specific article (state prob)
+  const backToSearch = () => {
+    setSearching(true);
+  };
 
   return (
     <div className="page__wrapper">
@@ -172,7 +175,7 @@ const App: FC = () => {
               />
             </>
           )}
-          {searching === false && <Article />}
+          {searching === false && <Article backToSearch={backToSearch} />}
 
           <footer className="footer__sign">
             <p className="sign">
