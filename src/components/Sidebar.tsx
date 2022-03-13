@@ -1,12 +1,14 @@
 import React from "react";
 import { KeyboardBackspace } from "styled-icons/material";
 
-type Props = {};
+type Props = {
+  backToSearch: () => void;
+};
 
-function Sidebar({}: Props) {
+function Sidebar({ backToSearch }: Props) {
   return (
     <div className="sidebar__wrapper flex-col">
-      <div className="sidebar__back flex-row">
+      <div className="sidebar__back flex-row" onClick={backToSearch}>
         <KeyboardBackspace size="16px" className="back__icon" />
         <p className="back__text">Back to search</p>
       </div>
