@@ -34,7 +34,11 @@ const Results: React.FC<Props> = (props: Props) => {
       autoplay: true,
       animationData: require("../dots.json"),
     });
-  }, [props.loading]);
+
+    return () => {
+      lottie.destroy();
+    };
+  }, []);
 
   const cardElements = props.posts.map((item) => {
     let m = moment(item.publication_date);
@@ -61,7 +65,7 @@ const Results: React.FC<Props> = (props: Props) => {
 
   return (
     <>
-      {props.loading ? (
+      {props.loading === true ? (
         <div className="lottie__container" ref={container}></div>
       ) : (
         <div className="section__wrapper flex-col results">{cardElements}</div>
