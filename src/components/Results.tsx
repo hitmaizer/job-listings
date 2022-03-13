@@ -1,8 +1,10 @@
 import React from "react";
 import ResultCard from "./ResultCard";
 import moment from "moment";
+import lottie from "lottie-web";
 
 interface Props {
+  loading: boolean;
   posts: {
     id: number;
     url: string;
@@ -22,6 +24,18 @@ interface Props {
 }
 
 const Results: React.FC<Props> = (props: Props) => {
+  const container = React.useRef<any>(null);
+
+  React.useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: require("../dots.json"),
+    });
+  }, [props.loading]);
+
   const cardElements = props.posts.map((item) => {
     let m = moment(item.publication_date);
 
@@ -46,7 +60,13 @@ const Results: React.FC<Props> = (props: Props) => {
   });
 
   return (
-    <div className="section__wrapper flex-col results">{cardElements}</div>
+    <>
+      {props.loading ? (
+        <div className="lottie__container" ref={container}></div>
+      ) : (
+        <div className="section__wrapper flex-col results">{cardElements}</div>
+      )}
+    </>
   );
 };
 
