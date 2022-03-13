@@ -3,7 +3,7 @@ import { Clock, Globe } from "styled-icons/entypo";
 import StyledCard from "../elements/StyledCard";
 
 interface Props {
-  id?: number;
+  id: number;
   url: string;
   title: string;
   company_name: string;
@@ -16,11 +16,15 @@ interface Props {
   salary?: string;
   description: string;
   company_logo_url?: string;
+  handleSpecificPost: (a: number) => void;
 }
 
 const ResultCard: FC<Props> = (props: Props) => {
   return (
-    <StyledCard className="card__wrapper flex-row">
+    <StyledCard
+      className="card__wrapper flex-row"
+      onClick={(id) => props.handleSpecificPost(props.id)}
+    >
       <img src={props.company_logo} alt="" className="card__img" />
       <div className="card__info flex-col">
         <h6 className="info__company">{props.company_name}</h6>
