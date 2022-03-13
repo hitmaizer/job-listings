@@ -24,7 +24,6 @@ type Props = {
 
 function Article({ backToSearch, selectedPost }: Props) {
   let m = moment(selectedPost.publication_date);
-  console.log(selectedPost);
 
   return (
     <div className="article__wrapper flex-row">
