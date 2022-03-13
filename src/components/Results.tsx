@@ -4,7 +4,7 @@ import moment from "moment";
 
 interface Props {
   posts: {
-    id?: number;
+    id: number;
     url: string;
     title: string;
     company_name: string;
@@ -18,6 +18,7 @@ interface Props {
     description: string;
     company_logo_url?: string;
   }[];
+  handleSpecificPost: (a: number) => void;
 }
 
 const Results: React.FC<Props> = (props: Props) => {
@@ -38,6 +39,8 @@ const Results: React.FC<Props> = (props: Props) => {
         candidate_required_location={item.candidate_required_location}
         salary={item.salary}
         description={item.description}
+        handleSpecificPost={props.handleSpecificPost}
+        id={item.id}
       />
     );
   });
