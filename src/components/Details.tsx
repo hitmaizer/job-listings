@@ -13,7 +13,6 @@ type Props = {
 };
 
 function Details(props: Props) {
-  console.log(props.candidate_required_location);
   return (
     <div className="details__wrapper flex-col">
       <div className="details__header flex-row">
