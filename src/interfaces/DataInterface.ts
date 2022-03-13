@@ -1,6 +1,6 @@
 export interface DataObj {
   posts: {
-    id?: number;
+    id: number;
     url: string;
     title: string;
     company_name: string;
