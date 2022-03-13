@@ -91,6 +91,7 @@ input[type="radio"] {
   color: $primaryBlue;
   gap: 16px;
   align-items: center;
+  cursor: pointer;
   .back__text {
     font-family: $poppins;
     font-weight: 500;
