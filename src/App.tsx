@@ -136,11 +136,16 @@ const App: FC = () => {
 
   //handle specific post
   const handleSpecificPost = (id: number) => {
-    console.log(id);
     //recebe o id do post selecionado
     //create newPost = alldata.filter o post com o mesmo id
+    const newPost = allData.filter((item) => {
+      return item.id === id;
+    });
+    console.log(newPost);
     //set specific post to be newPost
+    setSelectedPost(newPost);
     //set searching to false
+    setSearching(false);
   };
 
   return (
@@ -186,7 +191,12 @@ const App: FC = () => {
               />
             </>
           )}
-          {searching === false && <Article backToSearch={backToSearch} />}
+          {searching === false && (
+            <Article
+              backToSearch={backToSearch}
+              selectedPost={selectedPost[0]}
+            />
+          )}
 
           <footer className="footer__sign">
             <p className="sign">
