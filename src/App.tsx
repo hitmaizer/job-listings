@@ -11,7 +11,7 @@ import Pagination from "./components/Pagination";
 import axios from "axios";
 
 const App: FC = () => {
-  const [searching, setSearching] = React.useState<boolean>(false);
+  const [searching, setSearching] = React.useState<boolean>(true);
   const [allData, setAllData] = React.useState<DataObj["posts"]>(Data);
   const [currentPage, setCurrentPage] = React.useState<number>(1);
   const [postsPerPage, setPostsPerPage] = React.useState<number>(5);
@@ -26,6 +26,7 @@ const App: FC = () => {
   const [locationFilter, setLocationFilter] = React.useState<string>("");
   const [currentPosts, setCurrentPosts] =
     React.useState<DataObj["posts"]>(Data);
+  const [selectedPost, setSelectedPost] = React.useState<DataObj["posts"]>([]);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -128,11 +129,18 @@ const App: FC = () => {
     }
   }, [locationFilter]);
 
-  console.log(currentPosts);
-
-  //specific article (state prob)
+  //back to search Func
   const backToSearch = () => {
     setSearching(true);
+  };
+
+  //handle specific post
+  const handleSpecificPost = (id: number) => {
+    console.log(id);
+    //recebe o id do post selecionado
+    //create newPost = alldata.filter o post com o mesmo id
+    //set specific post to be newPost
+    //set searching to false
   };
 
   return (
@@ -160,7 +168,10 @@ const App: FC = () => {
                   handleLocation={handleLocation}
                   handleFulltime={handleFulltime}
                 />
-                <Results posts={postsToDisplay} />
+                <Results
+                  posts={postsToDisplay}
+                  handleSpecificPost={handleSpecificPost}
+                />
               </div>
               <Pagination
                 postsPerPage={postsPerPage}
