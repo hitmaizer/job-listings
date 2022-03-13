@@ -141,7 +141,7 @@ const App: FC = () => {
     const newPost = allData.filter((item) => {
       return item.id === id;
     });
-    console.log(newPost);
+
     //set specific post to be newPost
     setSelectedPost(newPost);
     //set searching to false
