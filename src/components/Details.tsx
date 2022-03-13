@@ -1,84 +1,45 @@
 import React from "react";
 import { Clock, Globe } from "styled-icons/entypo";
 
-type Props = {};
+type Props = {
+  title: string;
+  job_type?: string;
+  publication_date: string;
+  company_name: string;
+  company_logo: string;
+  description: string;
+  url: string;
+  candidate_required_location: string;
+};
 
-function Details({}: Props) {
+function Details(props: Props) {
+  console.log(props.candidate_required_location);
   return (
     <div className="details__wrapper flex-col">
       <div className="details__header flex-row">
-        <h1 className="details__title">Front End Software Engineer</h1>
-        <h5 className="info__badge article__badge">Full time</h5>
+        <h1 className="details__title">{props.title}</h1>
+        {props.job_type && (
+          <h5 className="info__badge article__badge">Full time</h5>
+        )}
       </div>
       <div className="details__item flex-row">
         <Clock size="16px" />
-        <p className="item__text">5 days ago</p>
+        <p className="item__text">{props.publication_date}</p>
       </div>
       <div className="details__info flex-row">
-        <img src="images/placeholder.png" alt="" className="info__img" />
+        <img src={props.company_logo} alt="" className="info__img" />
         <div className="info__details flex-col">
-          <h3 className="details__company">Kasisto</h3>
+          <h3 className="details__company">{props.company_name}</h3>
           <div className="details__item flex-row">
             <Globe size="16px" />
-            <p className="item__text">New York</p>
+            <p className="item__text">{props.candidate_required_location}</p>
           </div>
         </div>
       </div>
-      <p className="details__text">
-        Humanizing Digital Experiences® <br />
-        <br />
-        Kasisto’s Digital Experience Platform, KAI, is designed for financial
-        institutions to deliver the industry’s most amazing Conversational AI
-        powered intelligent virtual assistants to their customers. KAI is open
-        and extensible, and also fluent in the language of banking and finance.
-        From simple retail transactions to the complex demands of corporate
-        banks and wealth management, financial institutions can deliver
-        meaningful digital interactions with KAI that help build their digital
-        brand. <br />
-        <br />
-        Financial institutions around the world use KAI, including DBS Bank,
-        J.P. Morgan, Mastercard, Standard Chartered, TD Bank, and Manulife Bank
-        among others. They chose KAI for its proven track record to drive
-        business results while improving customer experiences. The platform is
-        used by millions of consumers around the world, all the time, across
-        multiple channels, in different languages, and is optimized for
-        performance, scalability, security, and compliance. <br />
-        <br />
-        This position We are looking for a Full-Stack, client side software
-        engineer to help build and integrate responsive chat interfaces,
-        analytics dashboards and reporting tools. <br />
-        <br />
-        What you’ll be doing <br />
-        <br />
-        Working closely with clients and internal engineering, product and
-        design teams to gather requirements Building and integrating front-end
-        applications with CSS, HTML, Javascript, jQuery, Vue.js, Webpack,
-        Handlebars.js, LESS, Backbone, Python, Django and Java Working to
-        improve user experience and functionality for tools Writing testable
-        code utilizing common front-end unit and BDD testing frameworks What you
-        need for this position <br />
-        <br />
-        3+ years in client-side web development with CSS, HTML, Javascript and
-        jQuery Proven, full-stack front-end experience using Python and Django
-        Other Modern Web Framework(s) experience is a plus (React, Vue, Angular,
-        Ember) Experience working collaboratively to build scalable, modular,
-        production software in an Agile environment Experience using RESTful
-        json services Node.js and API development familiarity is plus D3.js is a
-        plus <br />
-        <br />
-        What we offer: <br />
-        <br />
-        Competitive compensation package Ground floor opportunity within rapidly
-        growing tech startup Great collaborative team environment Full Benefits
-        Fun perks <br />
-        <br />
-        Location - NYC, Flatiron District <br />
-        <br />
-        We welcome your cover letter with a description of your previous
-        complete experience and your resume. Applicants must be authorized to
-        work in the US as we are unable to sponsor. Kasisto is an equal
-        opportunity employer.
-      </p>
+      <p
+        className="details__text"
+        dangerouslySetInnerHTML={{ __html: props.description }}
+      ></p>
     </div>
   );
 }
