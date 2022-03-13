@@ -176,6 +176,7 @@ const App: FC = () => {
                 <Results
                   posts={postsToDisplay}
                   handleSpecificPost={handleSpecificPost}
+                  loading={loading}
                 />
               </div>
               <Pagination
