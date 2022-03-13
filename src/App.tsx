@@ -138,7 +138,7 @@ const App: FC = () => {
   const handleSpecificPost = (id: number) => {
     //recebe o id do post selecionado
     //create newPost = alldata.filter o post com o mesmo id
-    const newPost = allData.filter((item) => {
+    const newPost = postsToDisplay.filter((item) => {
       return item.id === id;
     });
 
