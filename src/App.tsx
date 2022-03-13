@@ -11,7 +11,7 @@ import Pagination from "./components/Pagination";
 import axios from "axios";
 
 const App: FC = () => {
-  const [searching, setSearching] = React.useState<boolean>(true);
+  const [searching, setSearching] = React.useState<boolean>(false);
   const [allData, setAllData] = React.useState<DataObj["posts"]>(Data);
   const [currentPage, setCurrentPage] = React.useState<number>(1);
   const [postsPerPage, setPostsPerPage] = React.useState<number>(5);
@@ -136,14 +136,14 @@ const App: FC = () => {
     <div className="page__wrapper">
       <div className="content__wrapper flex-col">
         <ThemeProvider theme={Theme}>
+          <header className="page__header">
+            <h6 className="header__logo">
+              <span className="strong__text">Remote </span>
+              Jobs
+            </h6>
+          </header>
           {searching === true && (
             <>
-              <header className="page__header">
-                <h6 className="header__logo">
-                  <span className="strong__text">Remote </span>
-                  Jobs
-                </h6>
-              </header>
               <PositionSearchbar
                 handleFilter={handleFilter}
                 filteredData={filteredData}
