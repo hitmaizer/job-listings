@@ -31,6 +31,9 @@
   top: 50%;
   transform: translateY(calc(-50%));
   left: 2%;
+  @include respond-below(md) {
+    left: 5%;
+  }
 }
 
 .search__input {
@@ -47,7 +50,6 @@
     line-height: 14px;
     color: $footerGray;
     overflow: hidden;
-
     display: inline-block;
   }
   @include respond-below(md) {
