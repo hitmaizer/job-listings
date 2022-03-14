@@ -35,6 +35,9 @@
   position: relative;
   margin-top: 16px;
   margin-bottom: 24px;
+  @include respond-below(md) {
+    min-width: 0;
+  }
 }
 
 .location__search {
