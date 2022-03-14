@@ -45,6 +45,12 @@
   max-width: 1440px;
 }
 
+@media (max-width: 991px) {
+  .content__wrapper {
+    padding: 8px;
+  }
+}
+
 .page__header {
   width: 100%;
   display: -webkit-box;
@@ -511,6 +517,16 @@ input[type="radio"]:active {
 
 .article__wrapper {
   gap: 64px;
+}
+
+@media (max-width: 991px) {
+  .article__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 32px;
+  }
 }
 
 .details__header {
