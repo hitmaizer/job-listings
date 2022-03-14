@@ -94,8 +94,14 @@
   place-content: flex-end;
   gap: 12px;
   width: 100%;
-  margin-right: 15%;
   margin-top: 32px;
+  max-width: 1440px;
+}
+
+@media (max-width: 991px) {
+  .pagination__wrapper {
+    max-width: 568px;
+  }
 }
 
 .active {
