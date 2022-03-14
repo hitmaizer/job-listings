@@ -73,6 +73,15 @@
           justify-content: center;
 }
 
+@media (max-width: 991px) {
+  .bottom__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .results {
   gap: 32px;
 }
