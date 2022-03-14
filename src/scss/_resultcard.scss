@@ -15,8 +15,15 @@
 
 .card__img {
   max-width: 100%;
+  max-height: 100%;
   width: 90px;
   border-radius: 4px;
+}
+
+.card__infos {
+  @include respond-below(md) {
+    flex-direction: column;
+  }
 }
 
 .info__company {
@@ -53,6 +60,9 @@
   color: $footerGray;
   gap: 16px;
   flex: 1;
+  @include respond-below(md) {
+    margin-top: 16px;
+  }
 }
 
 .detail__item {
