@@ -209,7 +209,7 @@
 
 @media (max-width: 991px) {
   .position {
-    min-width: 0;
+    min-width: 570px;
   }
 }
 
@@ -219,6 +219,12 @@
   min-width: 790px;
   -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 991px) {
+  .input__container {
+    min-width: 315px;
+  }
 }
 
 .input__icon {
@@ -236,6 +242,7 @@
   border-radius: 4px;
   border: none;
   text-indent: 40px;
+  text-overflow: ellipsis;
 }
 
 .search__input::-webkit-input-placeholder {
@@ -244,6 +251,8 @@
   font-size: 12px;
   line-height: 14px;
   color: #b9bdcf;
+  overflow: hidden;
+  display: inline-block;
 }
 
 .search__input:-ms-input-placeholder {
@@ -252,6 +261,8 @@
   font-size: 12px;
   line-height: 14px;
   color: #b9bdcf;
+  overflow: hidden;
+  display: inline-block;
 }
 
 .search__input::-ms-input-placeholder {
@@ -260,6 +271,8 @@
   font-size: 12px;
   line-height: 14px;
   color: #b9bdcf;
+  overflow: hidden;
+  display: inline-block;
 }
 
 .search__input::placeholder {
@@ -268,6 +281,23 @@
   font-size: 12px;
   line-height: 14px;
   color: #b9bdcf;
+  overflow: hidden;
+  display: inline-block;
+}
+
+@media (max-width: 991px) {
+  .search__input::-webkit-input-placeholder {
+    width: 60%;
+  }
+  .search__input:-ms-input-placeholder {
+    width: 60%;
+  }
+  .search__input::-ms-input-placeholder {
+    width: 60%;
+  }
+  .search__input::placeholder {
+    width: 60%;
+  }
 }
 
 .search__btn {
@@ -288,6 +318,12 @@
 
 .search__btn:hover {
   background-color: #51a1ff;
+}
+
+@media (max-width: 991px) {
+  .search__btn {
+    padding: 14px 27px;
+  }
 }
 
 .sidebar__checkbox {
