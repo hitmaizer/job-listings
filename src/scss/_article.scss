@@ -1,5 +1,9 @@
 .article__wrapper {
   gap: 64px;
+  @include respond-below(md) {
+    flex-direction: column;
+    gap: 32px;
+  }
 }
 
 .details__header {
