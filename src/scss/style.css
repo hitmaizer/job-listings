@@ -207,6 +207,12 @@
           align-items: center;
 }
 
+@media (max-width: 991px) {
+  .position {
+    min-width: 0;
+  }
+}
+
 .input__container {
   max-width: 800px;
   position: relative;
