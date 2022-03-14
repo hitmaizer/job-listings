@@ -395,6 +395,12 @@
   margin-bottom: 24px;
 }
 
+@media (max-width: 991px) {
+  .input__container--location {
+    min-width: 0;
+  }
+}
+
 .location__search {
   width: 100%;
   background-color: #ffffff;
