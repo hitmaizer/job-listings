@@ -27,6 +27,9 @@
 .content__wrapper {
   align-items: center;
   max-width: 1440px;
+  @include respond-below(md) {
+    padding: 8px;
+  }
 }
 
 .page__header {
