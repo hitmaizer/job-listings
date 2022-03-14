@@ -82,7 +82,7 @@ const App: FC = () => {
       });
       setCurrentPosts(fulltimeFiltered);
     } else {
-      setAllData(Data);
+      setCurrentPosts(allData);
     }
   }, [fulltimeFilter]);
 
