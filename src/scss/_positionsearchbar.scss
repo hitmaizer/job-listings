@@ -10,6 +10,9 @@
   margin-top: 32px;
   justify-content: center;
   align-items: center;
+  @include respond-below(md) {
+    min-width: 0;
+  }
 }
 
 .input__container {
