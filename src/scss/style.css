@@ -329,6 +329,7 @@
 @media (max-width: 991px) {
   .search__btn {
     padding: 14px 27px;
+    right: 1.7%;
   }
 }
 
