@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC } from "react";
 import Theme from "./theme/Theme";
 import { ThemeProvider } from "styled-components";
@@ -127,6 +128,7 @@ const App: FC = () => {
       });
       setCurrentPosts(newFilter);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locationFilter]);
 
   //back to search Func
