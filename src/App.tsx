@@ -85,6 +85,7 @@ const App: FC = () => {
     } else {
       setCurrentPosts(allData);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fulltimeFilter]);
 
   //Search btn API call
