@@ -546,6 +546,7 @@ input[type="radio"]:active {
 
 .article__badge {
   margin-top: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .details__item {
