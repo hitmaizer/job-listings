@@ -98,7 +98,7 @@ const App: FC = () => {
           if (typedData === "") {
             setFilteredData([]);
           } else {
-            setCurrentPosts(response.data.jobs);
+            setAllData(response.data.jobs);
           }
         })
         .catch((error) => {
@@ -107,6 +107,7 @@ const App: FC = () => {
         })
         .finally(() => {
           setLoading(false);
+          setCurrentPosts(allData);
         });
       return request;
     }
